@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estiyak Book Store</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        <div class="navbar_header"> 
+            <a href="index.html" class="logo">Estiyak</a>
+
+            <nav class="navbar">
+                <a href="index.html#novel">উপন্যাস <span></span></a>                
+                <a href="index.html#poetry">কাব্যগ্রন্থ <span></span></a>
+                <a href="index.html#drama">নাটক <span></span></a>
+                <a href="index.html#essay">প্রবন্ধ <span></span></a>
+                <a href="index.html#story">ছোটগল্প <span></span></a>
+                <a href="index.html#etc">অন্যান্য <span></span></a>
+                <a href="poet.html" id="poet">কবি গন<span></span></a>
+            </nav>
+            <!-- ডানপাশের সার্চ বার এবং মোবাইল মেনু আইকন -->
+            <div class="header_right">
+                <div class="search_box">
+                    <input type="text" placeholder="Search books...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <i id="menu_icon" class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- মোবাইল নেভবারের ব্যাকগ্রাউন্ড ব্লার -->
+        <div class="nav_bg"></div> 
+    </header>
+    <main>
+        <section id="novel">
+            <h1> উপন্যাস -------------------------</h1>
+            <div class="book_container">
+            
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/পদ্মানদীর মাঝি.jfif" alt="পদ্মা নদীর মাঝি">
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">পদ্মা নদীর মাঝি</h3>
+                    <p class="author_name">মানিক বন্দ্যোপাধ্যায়</p>
+                </div>
+            </div>
+
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/পুতুল নাচের ইতিকথা.jfif" alt="পুতুল নাচের ইতিকথা ">
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">পুতুল নাচের ইতিকথা </h3>
+                    <p class="author_name">মানিক বন্দ্যোপাধ্যায়</p>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <script src="./assets/javascript/java.js"></script>
+</body>
+</html>

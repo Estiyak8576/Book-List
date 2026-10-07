@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estiyak Book Store</title>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CSS File -->
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+<body>
+    <header>
+        
+        <div class="navbar_header"> 
+            <a href="index.html" class="logo">Estiyak</a>
+
+            <nav class="navbar">
+                <a href="index.html#novel">উপন্যাস <span></span></a>                
+                <a href="index.html#poetry">কাব্যগ্রন্থ <span></span></a>
+                <a href="index.html#drama">নাটক <span></span></a>
+                <a href="index.html#essay">প্রবন্ধ <span></span></a>
+                <a href="index.html#story">ছোটগল্প <span></span></a>
+                <a href="index.html#etc">অন্যান্য <span></span></a>
+                <a href="poet.html" id="poet">কবি গন<span></span></a>
+            </nav>
+            <div class="header_right">
+                <form id="search_form" class="search_box">
+                    <input type="text" id="search_input" placeholder="Search books...">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
+                <i id="menu_icon" class="fa-solid fa-bars"></i>
+            </div>
+        </div>
+        <div class="nav_bg"></div> 
+    </header>
+    <main>
+        <section id="novel">
+            <h1 > উপন্যাস -------------------------</h1>
+            <div class="book_container">
+            <!-- বই ১ -->
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/শেষের কবিতা.jpg" alt="শেষের কবিতা">
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">শেষের কবিতা </h3>
+                    <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                </div>
+            </div>
+
+            <!-- বই ২ -->
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/চোখের বালি.jfif" alt="চোখের বালি">
+                    <i class="fa-solid fa-circle-check read_tick"></i>
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">চোখের বালি</h3>
+                    <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                </div>
+            </div>
+
+            <!-- বই ৩ -->
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/নৌকাডুবি.jfif" alt="নৌকাডুবি">
+                    <i class="fa-solid fa-circle-check read_tick"></i>
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">নৌকাডুবি</h3>
+                    <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                </div>
+            </div>
+
+            <!-- বই ৪ -->
+            <div class="book_card">
+                <div class="book_img">
+                    <img src="./Assets/image/ঘরে বাইরে.jfif" alt="ঘরে বাইরে">
+                </div>
+                <div class="book_info">
+                    <h3 class="book_name">ঘরে বাইরে</h3>
+                    <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                </div>
+            </div>
+        </section>
+        <section class="poetry" id="poetry">
+            <h1 >কাব্যগ্রন্থ -------------------------</h1>
+            <div class="book_container">
+                <!-- বই ১ -->
+                <div class="book_card">
+                    <div class="book_img">
+                        <img src="./Assets/image/কল্পনা.jfif" alt="কল্পনা">
+                    </div>
+                    <div class="book_info">
+                        <h3 class="book_name">কল্পনা</h3>
+                        <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                    </div>
+                </div>
+                <div class="book_card">
+                    <div class="book_img">
+                        <img src="./Assets/image/ক্ষণিকা.jfif" alt="ক্ষণিকা ">
+                    </div>
+                    <div class="book_info">
+                        <h3 class="book_name">ক্ষণিকা </h3>
+                        <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                    </div>
+                </div>
+                <div class="book_card">
+                    <div class="book_img">
+                        <img src="./Assets/image/সঞ্চয়িতা.jfif" alt="সঞ্চয়িতা">
+                    </div>
+                    <div class="book_info">
+                        <h3 class="book_name">সঞ্চয়িতা</h3>
+                        <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="drama" id="drama">
+            <h1 >নাটক -------------------------</h1>
+            <div class="book_container">
+                <!-- বই ১ -->
+                <div class="book_card">
+                    <div class="book_img">
+                        <img src="./Assets/image/বিসর্জন.jfif" alt="বিসর্জন">
+                    </div>
+                    <div class="book_info">
+                        <h3 class="book_name">বিসর্জন</h3>
+                        <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="etc" id="etc">
+            <h1 >ভ্রমণ কাহিনী -------------------------</h1>
+            <div class="book_container">
+                <!-- বই ১ -->
+                <div class="book_card">
+                    <div class="book_img">
+                        <img src="./Assets/image/য়ুরোপ প্রবাসীর পত্র.jfif" alt="য়ুরোপ প্রবাসীর পত্র">
+                    </div>
+                    <div class="book_info">
+                        <h3 class="book_name">য়ুরোপ প্রবাসীর পত্র</h3>
+                        <p class="author_name">রবীন্দ্রনাথ ঠাকুর</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+        
+    <script src="./assets/javascript/java.js"></script>
+</body>
+</html>

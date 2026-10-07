@@ -1,0 +1,410 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Bengali', 'Noto Sans Devanagari', 'Noto Nastaliq Urdu', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-image: url("../image/IMG_8068.JPG");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    overflow-x: hidden; 
+    padding-top: 80px; 
+}
+
+/* ---------------- ১. ফিক্সড নেভবার স্টাইল ---------------- */
+.navbar_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 50px;
+    background: rgba(255, 255, 255, 0.15);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    z-index: 100;
+}
+
+.navbar_header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, .4), transparent);
+    transition: .5s;
+}
+
+.navbar_header:hover::before {
+    left: 100%;
+}
+
+.logo {
+    color: #000;
+    font-size: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 5px 12px;
+    transition: 0.3s;
+}
+
+.logo:hover {
+    color: #fff;
+    border-radius: 8px;
+    background: #5F9598;
+}
+
+.navbar a {
+    position: relative;
+    color: #000;
+    font-size: 18px;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.5s;
+}
+
+.navbar a:hover {
+    color: #1DCD9F;
+}
+
+.navbar a span {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-bottom: 4px solid #1DCD9F;
+    border-radius: 15px;
+    transform: scale(0) translateY(50px);
+    opacity: 0;
+    transition: .5s;
+} 
+
+.poet a,
+.navbar a:hover span {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+}
+
+/* ---------------- ২. ডানপাশের সার্চ বার ---------------- */
+.header_right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.search_box {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 25px;
+    padding: 5px 12px;
+    transition: 0.3s ease;
+}
+
+.search_box:focus-within {
+    background: #fff;
+    box-shadow: 0 0 8px rgba(29, 205, 159, 0.5);
+}
+
+.search_box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px 8px;
+    font-size: 14px;
+    color: #000;
+    width: 140px;
+    transition: 0.3s ease;
+}
+
+.search_box input::placeholder {
+    color: #555;
+}
+
+.search_box button {
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    color: #000;
+    font-size: 14px;
+}
+
+#menu_icon {
+    font-size: 28px;
+    color: #000;
+    cursor: pointer;
+    display: none;
+}
+
+/* ---------------- ৩. রেসপনসিভ (মোবাইল ভিউ) ---------------- */
+@media (max-width: 992px) {
+    .navbar_header {
+        padding: 15px 4%;
+    }
+    .search_box input {
+        width: 100px;
+    }
+}
+
+@media (max-width: 768px) {
+    #menu_icon {
+        display: block !important;
+        cursor: pointer;
+        font-size: 26px;
+    }
+
+    .navbar {
+        position: fixed;
+        top: 100%; /* হেডারের ঠিক নিচ থেকে শুরু হবে */
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        padding: 15px 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform: translateY(-150%); /* ডিফল্টভাবে স্ক্রিনের বাইরে থাকবে */
+        transition: transform 0.4s ease-in-out;
+        z-index: 101;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .navbar.active {
+        transform: translateY(0); /* ক্লিক করলে স্মুথলি নেমে আসবে */
+    }
+
+    .navbar a {
+        display: block;
+        margin: 10px 0;
+        font-size: 18px;
+        color: #000;
+    }
+
+    .nav_bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0, 0, 0, 0.5);
+        backdrop-filter: blur(4px);
+        z-index: 99;
+        display: none;
+    }
+
+    .nav_bg.active {
+        display: block;
+    }
+}
+/* main */
+main{
+    margin: 20px;
+}
+/* কন্টেইনার স্টাইল */
+.book_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* একক বইয়ের কার্ড */
+.book_card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.book_card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* বইয়ের ছবি */
+.book_img {
+    width: 100%;
+    height: 250px;
+    position: relative;
+}
+.read_tick {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 24px;
+    color: #2ec4b6;
+    background-color: #ffffff;
+    border-radius: 50%;
+    display: none;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+.book_card.is-read .read_tick {
+    display: block;
+}
+.book_img img {
+    width: 100%;
+    height: 250px;
+    display: block;
+}
+
+/* বইয়ের নাম ও লেখক */
+.book_info {
+    padding: 15px 10px;
+}
+
+.book_name {
+    font-size: 1.5rem;
+    color: #000;
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.author_name {
+    font-size: 1.2rem;
+    color: #666666;
+}
+/* poetry */
+.poetry {
+    margin: 20px;
+}
+/* poet */
+/* =========================================================
+   ১. ল্যাপটপ/ডেস্কটপ ভিউ (Desktop Default CSS)
+   ========================================================= */
+
+.poet {
+    max-width: 1000px;
+    margin: 30px auto;
+    padding: 0 20px;
+}
+
+.poet h1 {
+    font-size: 1.8rem;
+    color: #fff;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+    margin-bottom: 25px;
+    border-bottom: 2px solid #1DCD9F;
+    padding-bottom: 10px;
+}
+
+.list {
+    width: 100%;
+}
+
+.list ol {
+    list-style-type: bengali;
+    padding-left: 30px;
+    margin: 0;
+}
+
+/* প্রতিটি সারির জন্য Flexbox Layout (মার্জিনের ঝামেলামুক্ত) */
+.list ol li {
+    display: flex;
+    justify-content: space-between; /* কবি নাম বামে, ক্যাটাগরি ডানে */
+    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    transition: background 0.3s ease;
+}
+
+.list ol li:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* কবিদের নাম (লিংক) */
+.list li > a:first-child {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    text-shadow: 1px 1px 3px #000;
+}
+
+/* ক্যাটাগরি বাটনগুলোর কন্টেইনার সামঞ্জস্য */
+.poet_category {
+    margin: 0 4px !important; /* পুরাতন সব ফিক্সড মার্জিন বাদ */
+    padding: 5px 12px;
+    background: #1DCD9F;
+    color: #000000;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    text-shadow: none;
+    transition: opacity 0.2s ease;
+}
+
+.poet_category:hover {
+    opacity: 0.85;
+}
+
+/* পুরাতন ফিক্সড মার্জিনগুলো রিসেট */
+#poet_category_1,
+#poet_category_2,
+#poet_category_3,
+#poet_category_4,
+#poet_category_5,
+#poet_category_6 {
+    margin-left: 0 !important;
+}
+
+
+/* =========================================================
+   ২. মোবাইল ভিউ (Responsive Mobile CSS)
+   ========================================================= */
+
+@media screen and (max-width: 768px) {
+    .poet {
+        width: 100% !important;
+        margin: 10px 0 !important;
+        padding: 10px 15px !important;
+        box-sizing: border-box !important;
+    }
+
+    .poet h1 {
+        font-size: 1.3rem !important;
+        text-align: center !important;
+        margin-bottom: 15px !important;
+    }
+
+    .list ol {
+        padding-left: 20px !important;
+    }
+
+    .list ol li {
+        flex-direction: column !important; /* মোবাইলে নাম উপরে, ক্যাটাগরি নিচে */
+        align-items: flex-start !important;
+        padding: 12px 15px !important;
+        gap: 8px;
+    }
+
+    .list li > a:first-child {
+        font-size: 1.1rem !important;
+        width: 100% !important;
+    }
+
+    .poet_category {
+        display: inline-block !important;
+        margin: 4px 6px 2px 0 !important;
+        padding: 4px 10px !important;
+        font-size: 0.85rem !important;
+    }
+}
