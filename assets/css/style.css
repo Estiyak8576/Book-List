@@ -220,6 +220,31 @@ main{
     max-width: 1200px;
     margin: 0 auto;
 }
+.more_details {
+    margin-top: 10px;
+}
+
+.details_btn {
+    display: inline-block;
+    padding: 6px 12px;
+    background-color: #007bff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.details_btn:hover {
+    background-color: #0056b3;
+}
+
+.details_content {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+}
 
 /* একক বইয়ের কার্ড */
 .book_card {
